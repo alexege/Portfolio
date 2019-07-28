@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'portfolio_app\css\style.css' %}">
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+    <title>Alexander Ege</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row1"></div>
+        <div class="row2"></div>
+        <div class="row3"></div>
+        <div class="row4"></div>
+        <div class="row5"></div>
+    </div>
+
+<!-- <div class="row" style="display: block">
+    <button class="r1b1"></button>
+    <button class="r1b2"></button>
+    <button class="r1b3"></button>
+    <button class="r1b4"></button>
+    <button class="r1b5"></button>
+</div>
+<div class="row" style="display: block">
+    <button class="r2b1"></button>
+    <button class="r2b2"></button>
+    <button class="r2b3"></button>
+    <button class="r2b4"></button>
+    <button class="r2b5"></button>
+</div>
+<div class="row" style="display: block">
+    <button class="r3b1"></button>
+    <button class="r3b2"></button>
+    <button class="r3b3"></button>
+    <button class="r3b4"></button>
+    <button class="r3b5"></button>
+</div>
+<div class="row" style="display: block">
+    <button class="r4b1"></button>
+    <button class="r4b2"></button>
+    <button class="r4b3"></button>
+    <button class="r4b4"></button>
+    <button class="r4b5"></button>
+</div>
+<div class="row" style="display: block">
+    <button class="r5b1"></button>
+    <button class="r5b2"></button>
+    <button class="r5b3"></button>
+    <button class="r5b4"></button>
+    <button class="r5b5"></button>
+</div> -->
+
+
+<!-- 
+<div class="rainbow">
+    Rainbow border
+</div> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+    // $(document).ready(function(){
+    //     $("button").click(function(){
+    //         $(this).animate({height: 120, width: 120}, 200);
+    //         $(this).animate({height: 100, width: 100}, 200, function(){
+    //             $(".r2b3").animate({height: 120, width: 120}, 200);
+    //             $(".r2b3").animate({height: 100, width: 100}, 200);
+                
+    //             $(".r3b2").animate({height: 120, width: 120}, 200);
+    //             $(".r3b2").animate({height: 100, width: 100}, 200);
+                
+    //             $(".r3b4").animate({height: 120, width: 120}, 200);
+    //             $(".r3b4").animate({height: 100, width: 100}, 200);
+                
+    //             $(".r4b3").animate({height: 120, width: 120}, 200);
+    //             $(".r4b3").animate({height: 100, width: 100}, 200, function(){
+    //                 $(".r5b2").animate({height: 120, width: 120}, 200);
+    //             });
+    //         });
+    //     })
+    // })
+
+    arr1 = [4, 3, 2, 3, 4]
+    arr2 = [3, 2, 1, 2, 3]
+    arr3 = [2, 1, 0, 1, 2]
+    arr4 = [3, 2, 1, 2, 3]
+    arr5 = [4, 3, 2, 3, 4]
+    
+    for(var i in arr1){
+        $(".row1").append(`<button class='${arr1[i]}'></button>`);
+    }
+    for(var i in arr2){
+        $(".row2").append(`<button class='${arr2[i]}'></button>`);
+    }
+    for(var i in arr3){
+        $(".row3").append(`<button class='${arr3[i]}'></button>`);
+    }
+    for(var i in arr4){
+        $(".row4").append(`<button class='${arr4[i]}'></button>`);
+    }
+    for(var i in arr5){
+        $(".row5").append(`<button class='${arr5[i]}'></button>`);
+    }
+
+    const speed = 250;
+    const prev_height = 100;
+    const prev_width = 100;
+    const new_height = 120;
+    const new_width = 120;
+
+    var a1 = {height:new_height, width: new_width};
+    var a2 = {height:prev_height, width: prev_width};
+
+    $(document).ready(function(){
+        $("button").click(function(){
+            var currentButton = parseInt($(this).attr('class'));
+            console.log("starting: ", currentButton);
+
+            $(`.${currentButton}`).animate({opacity: 0.25}, 500);
+            $(`.${currentButton}`).animate({opacity: 1.0 }, 500);
+            console.log("Current:", currentButton);
+            while(currentButton < 5){
+            $(`.${currentButton + 1}`).delay(500 * currentButton/2).animate({margin: 10, opacity: 0.25}, 200);
+            $(`.${currentButton + 1}`).delay(500 * currentButton/2).animate({margin: 0, opacity: 1.0 }, 200);
+            console.log("Current:", currentButton);
+            currentButton += 1;
+            }
+
+
+
+            // $(`.${currentButton}`).animate({opacity: 0.25}, 500);
+            // $(`.${currentButton}`).animate({opacity: 1.0 }, 500, function(){
+            //     currentButton = currentButton + 1;
+            //     console.log("current_udpated: ", currentButton);
+
+            //     $(`.${currentButton}`).animate({opacity: 0.25}, 500);
+            //     $(`.${currentButton}`).animate({opacity: 1.0 }, 500);
+
+            // });
+           
+        })
+    });
+
+    // Working
+    // $(document).ready(function(){
+    //     $("button").click(function(){
+    //         $(this).animate({opacity: 0.25}, 500);
+    //         $(this).animate({opacity: 1}, 500, function(){
+
+    //         var currentButton = $(this).attr('class');
+    //         console.log("CurrentButton: ", currentButton);
+    //         console.log($(`.${parseInt(currentButton)+1}`).attr('class'));
+    //             $(`.${parseInt(currentButton) + 1}`).animate({opacity: 0.25}, 500);
+    //             $(`.${parseInt(currentButton) + 1}`).animate({opacity: 1}, 500);
+    //             currentButton = parseInt($(this).attr('class'));
+    //     });
+    //     });
+    // })
+
+    // $(document).ready(function(){
+    //     $("button").click(function(){            
+
+    //         $(this).animate(a1, speed);
+    //         $(this).animate(a2, speed, function(){
+    //             $(this).next("button").animate(a1, speed);
+    //             $(this).next("button").animate(a2, speed, function(){
+    //                 $(this).next("button").animate(a1, speed);
+    //                 $(this).next("button").animate(a2, speed, function(){
+    //                     $(this).next("button").animate(a1, speed);
+    //                     $(this).next("button").animate(a2, speed);
+    //                 });
+    //             });
+    //             $(this).prev("button").animate(a1, speed);
+    //             $(this).prev("button").animate(a2, speed, function(){
+    //                 $(this).prev("button").animate(a1, speed);
+    //                 $(this).prev("button").animate(a2, speed, function(){
+    //                     $(this).prev("button").animate(a1, speed);
+    //                     $(this).prev("button").animate(a2, speed);
+    //                 });
+    //             });
+    //         })
+    //     })
+    // });
+</script>
+</body>
+</html>

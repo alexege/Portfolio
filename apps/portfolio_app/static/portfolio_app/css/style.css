@@ -1,0 +1,35 @@
+body{
+    background: #373940;
+    color: white;
+}
+
+.row{
+    display: block;
+}
+
+.shape{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    display: inline-block;
+}
+
+button {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}
+
+.container {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+  
