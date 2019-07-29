@@ -15,16 +15,81 @@ body{
 }
 
 button {
-    width: 100px;
-    height: 100px;
+    margin: 5px;
+    /* border: 1px solid red; */
+    width: 50px;
+    height: 50px;
     background-color: black;
+    border: 0px;
 }
 
 .container {
     text-align: center;
 }
 
+.enter, .enter button {
+    width: 150px;
+    height: 75px;
+    border: 1px solid white;
+    color: white;
+    position: absolute;
+    left: calc(50% - 75px);
+    top: calc(45% - 35.5px);
+}
 
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: red;
+    }
+    button {
+        width: 35px;
+        height: 35px;
+        margin: 2px;
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    body {
+        background-color: Orange;
+    }
+    button{
+        width: 37px;
+        height: 37px;
+        margin: 4px;
+    }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    body {
+        background-color: Yellow;
+    }
+    button {
+        width: 45px;
+        height: 45px;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    body {
+        background-color: Green;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    body {
+        background-color: blue;
+    }
+    button {
+        width: 55px;
+        height: 55px;
+    }
+}
 
 
 
